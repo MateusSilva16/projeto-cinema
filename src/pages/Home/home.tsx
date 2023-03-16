@@ -36,10 +36,10 @@ const Homer = ({ homeRef }) => {
               el: '.swiper-pagination',
               type: 'bullets',
             }}
-            navigation={{
+            /*   navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
-            }}
+            }} */
             modules={[Autoplay, Pagination, Navigation]}
             onAutoplayTimeLeft={onAutoplayTimeLeft}
             className="mySwiper"
@@ -53,13 +53,13 @@ const Homer = ({ homeRef }) => {
                 </SwiperSlide>
               );
             })}
-            <div className="swiper-button-next">
-              <MdSkipNext size={30} />
-            </div>
             <div className="swiper-pagination"></div>
+            {/* <div className="swiper-button-next">
+              <MdSkipNext size={30} />
+            </div> 
             <div className="swiper-button-prev">
               <MdSkipPrevious size={30} />
-            </div>
+            </div> */}
             <div className="autoplay-progress" slot="container-end">
               <svg viewBox="0 0 48 48" ref={progressCircle}>
                 <circle cx="24" cy="24" r="20"></circle>

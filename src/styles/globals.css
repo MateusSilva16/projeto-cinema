@@ -9,7 +9,7 @@ body {
 ::-webkit-scrollbar {
   background-color: darkslateblue;
   background-color: #3c3c3c;
-  width: 7px;
+  width: 0px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: darkslateblue;

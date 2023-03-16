@@ -1,8 +1,9 @@
-import NavBar from '../components/layout/Navbar/navBar.component';
+import NavBar from '../components/Layout/Navbar/navBar.component';
 import Contatos from './Contatos/contatos';
-import Gallery from './Gallery/gallery';
-import Homer from './Home/home';
+
+import Home from './Home/home';
 import React, { useRef } from 'react';
+import Gallery from './Gallery/gallery';
 
 export default function HomePage() {
   /* Scroll Navbar */
@@ -10,7 +11,7 @@ export default function HomePage() {
   const home = useRef(null);
   const gallery = useRef(null);
   const contatos = useRef(null);
-  let menuRef = useRef<HTMLDivElement>(null);
+
 
   const scrollToSection = (elementRef: any) => {
     window.scrollTo({
@@ -27,7 +28,7 @@ export default function HomePage() {
       
       />
 
-        <Homer homeRef={home}/>
+        <Home homeRef={home}/>
         <Gallery galleryRef={gallery}/>
         <Contatos contatosRef={contatos}/>
     </>

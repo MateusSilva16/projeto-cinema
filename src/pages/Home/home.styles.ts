@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import tokens from '../../utils/tokens';
 
-export const Container = styled.div`
+export const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color:  ${tokens.colors.secondary};
-  color:  ${tokens.colors.dark};
-  padding-top: 40px;
+  background-color: ${tokens.colors.dark};
+  color: ${tokens.colors.light};
+  padding-top: 50px;
 `;
 
 export const Content = styled.div`
@@ -17,8 +18,7 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 99%;
-  padding: 10px;
+  width: 100%;
 `;
 
 export const ContainerCarousel = styled.div`
@@ -50,7 +50,7 @@ export const ContainerCarousel = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color:  ${tokens.colors.light};
+    color: ${tokens.colors.secondary2};
   }
 
   .autoplay-progress svg {
@@ -62,7 +62,7 @@ export const ContainerCarousel = styled.div`
     width: 100%;
     height: 100%;
     stroke-width: 4px;
-    stroke:  ${tokens.colors.primary};
+    stroke: ${tokens.colors.secondary2};
     fill: none;
     stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
     stroke-dasharray: 125.6;
@@ -75,7 +75,7 @@ export const ContainerCarousel = styled.div`
     align-items: center;
     border-radius: 0px;
     width: 100%;
-    gap: 50px;
+    gap: auto;
   }
 
   .swiper-pagination-bullet {
@@ -84,11 +84,10 @@ export const ContainerCarousel = styled.div`
   }
 
   .swiper-pagination-bullet-active {
-    background-color:  ${tokens.colors.primary};
+    background-color: ${tokens.colors.secondary2};
     border-radius: 0;
   }
 
-  --swiper-pagination-color:  ${tokens.colors.primary};
   --swiper-pagination-border-radius: 0px;
   --swiper-pagination-left: auto;
   --swiper-pagination-right: auto;
@@ -102,20 +101,20 @@ export const ContainerCarousel = styled.div`
 
   .swiper-button-next {
     background-color: transparent;
-    color:  ${tokens.colors.primary};
+    color: ${tokens.colors.primary};
     width: 50px;
     height: 40px;
     border-radius: 8px;
-    border: 2px solid  ${tokens.colors.primary};
+    border: 2px solid ${tokens.colors.primary};
   }
 
   .swiper-button-prev {
     background-color: transparent;
-    color:  ${tokens.colors.primary};
+    color: ${tokens.colors.primary};
     width: 50px;
     height: 40px;
     border-radius: 8px;
-    border: 2px solid  ${tokens.colors.primary};
+    border: 2px solid ${tokens.colors.primary};
   }
 
   --swiper-navigation-size: 0px;
@@ -125,13 +124,14 @@ export const ContainerCarousel = styled.div`
 
 export const ContainerImg = styled.div`
   display: flex;
-  height: 95%;
-  width: 85%;
+  height: 100%;
+  width: 100%;
   margin-top: 10px;
 `;
 
 export const Image = styled.img`
   height: 100%;
   width: 100%;
-  object-position: bottom;
+  object-position:auto;
+  object-fit: auto;
 `;
