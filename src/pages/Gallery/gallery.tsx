@@ -42,7 +42,7 @@ const Gallery = ({ galleryRef }) => {
                   }}
                 >
                   <S.Image src={item.src} alt={item.alt} />
-                  <S.Title>{item.title}</S.Title>
+                 {/*  <S.Title>{item.title}</S.Title> */}
                 </S.Item>
               );
             })}

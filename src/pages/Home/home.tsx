@@ -11,9 +11,10 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { HomeData } from './home.data';
-import { MdSkipNext, MdSkipPrevious } from 'react-icons/md';
+import { BsArrowDown } from 'react-icons/bs';
+import HomeProps from './home.types';
 
-const Homer = ({ homeRef }) => {
+const Homer = ({ homeRef, scroll }: HomeProps) => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -23,6 +24,24 @@ const Homer = ({ homeRef }) => {
   return (
     <S.Container ref={homeRef}>
       <S.Content>
+        <S.ContainerDescription>
+          <S.ContentDescription>
+            <h1>Site </h1>
+            <h1>Filmes e </h1>
+            <h1>Games </h1>
+            <p>
+              Conheça alguns filmes e jogos, no qual existe detalhes de cada
+              um. Foram escolhidos pelo próprio desenvolvedor do site tendo em
+              vista que não são todos do mundo, mas são do meu agrado
+            </p>
+            <S.ButtonScroll onClick={scroll}>
+              <span>Scroll para saber mais</span>
+              <S.Icon>
+                <BsArrowDown />
+              </S.Icon>
+            </S.ButtonScroll>
+          </S.ContentDescription>
+        </S.ContainerDescription>
         <S.ContainerCarousel>
           <Swiper
             spaceBetween={30}

@@ -1,8 +1,8 @@
 import NavBar from '../components/Layout/Navbar/navBar.component';
-import Contatos from './Contatos/contatos';
+import Games from './Games/games';
 
 import Home from './Home/home';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Gallery from './Gallery/gallery';
 
 export default function HomePage() {
@@ -10,10 +10,19 @@ export default function HomePage() {
 
   const home = useRef(null);
   const gallery = useRef(null);
-  const contatos = useRef(null);
+  const games = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
+  const openMenu = () => {
+    setIsVisible(true);
+  };
+
+  const closeMenu = () => {
+    setIsVisible(false);
+  };
 
   const scrollToSection = (elementRef: any) => {
+    setIsVisible(false);
     window.scrollTo({
       top: elementRef.current.offsetTop,
       behavior: 'smooth',
@@ -22,15 +31,17 @@ export default function HomePage() {
   return (
     <>
       <NavBar
+        isVisible={isVisible}
+        closeMenu={closeMenu}
+        openMenu={openMenu}
         home={() => scrollToSection(home)}
         gallery={() => scrollToSection(gallery)}
-        contatos={() => scrollToSection(contatos)}
-      
+        games={() => scrollToSection(games)}
       />
 
-        <Home homeRef={home}/>
-        <Gallery galleryRef={gallery}/>
-        <Contatos contatosRef={contatos}/>
+      <Home homeRef={home} scroll={() => scrollToSection(gallery)}/>
+      <Gallery galleryRef={gallery} />
+      <Games gamesRef={games} />
     </>
   );
 }

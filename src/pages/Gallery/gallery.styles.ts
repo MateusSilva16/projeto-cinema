@@ -21,7 +21,7 @@ export const Container = styled.section`
 export const Content = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100%;
   width: 95%;
   color: ${tokens.colors.dark};
@@ -42,12 +42,12 @@ export const TitleSection = styled.h1`
   border-top: 1px solid ${tokens.colors.light};
 `;
 
-export const Lista = styled.ul`
+export const Lista = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto;
-  gap: 20px;
   justify-content: center;
   align-items: center;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  gap: 30px;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -70,11 +70,15 @@ export const Lista = styled.ul`
 
   @media (max-width: 390px) {
     grid-template-columns: auto;
-    gap: 40px;
+    gap: 50px;
   }
 `;
 
 export const Item = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   list-style: none;
   color: ${tokens.colors.light};
   text-align: center;
@@ -82,11 +86,8 @@ export const Item = styled.li`
   color: ${tokens.colors.light};
   height: 200px;
   width: 110px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
+
   :hover {
     background-color: ${tokens.colors.secondary3};
     color: ${tokens.colors.dark};
@@ -101,22 +102,8 @@ export const Item = styled.li`
   }
 
   @media (max-width: 390px) {
-    height: 100%;
-    width: 100%;
-    
-
-    :hover {
-    background-color: transparent;
-    color: ${tokens.colors.dark};
-    border: none;
-    transform: scale(1);
-    text-transform: uppercase;
-    font-size: 5px;
-    h2 {
-      font-size: 8px;
-      font-weight: bold;
-    }
-  }
+    height: 370px;
+    width: 300px;
   }
 `;
 
@@ -127,22 +114,19 @@ export const Title = styled.h2`
   padding: 0 2px;
   margin: 5px 0;
   font-weight: 100;
+  width: 100%;
 
 
   @media (max-width: 390px) {
-    font-size: 15px;
+    font-size: 20px;
   }
+  padding: 10px 0;
 `;
 
 export const Image = styled.img`
   object-fit: cover;
   height: 100%;
   width: 100%;
-
-  @media (max-width: 390px) {
-    object-fit: contain;
-  }
-
 `;
 
 /* Modal */

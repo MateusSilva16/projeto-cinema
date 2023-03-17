@@ -11,6 +11,10 @@ export const Container = styled.section`
   background-color: ${tokens.colors.dark};
   color: ${tokens.colors.light};
   padding-top: 50px;
+
+  @media (max-width: 450px) {
+    height: 100%;
+  }
 `;
 
 export const Content = styled.div`
@@ -19,6 +23,81 @@ export const Content = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
+`;
+
+export const ContainerDescription = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.3) 90%
+  );
+  position: absolute;
+  z-index: 10;
+`;
+
+export const ContentDescription = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px;
+  height: 100%;
+  width: 700px;
+
+  h1 {
+    font-size: 50px;
+    margin: 0;
+    padding-left: 10px;
+    text-align: center;
+    font-family: FontGame;
+  }
+  p {
+    width: 100%;
+    font-size: 15px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+  }
+`;
+
+export const ButtonScroll = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  left: 5px;
+  bottom: 40px;
+  font-family: sans-serif;
+
+  span {
+    text-align: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin: 10px 0;
+    padding: 0;
+  }
+`;
+export const Icon = styled.div`
+  position: relative;
+  animation: icon 1s infinite;
+
+  @keyframes icon {
+    0% {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: 10px;
+      opacity: 0.1;
+    }
+  }
 `;
 
 export const ContainerCarousel = styled.div`
@@ -120,18 +199,28 @@ export const ContainerCarousel = styled.div`
   --swiper-navigation-size: 0px;
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 10px;
+
+  @media (max-width: 450px) {
+    object-position: top;
+    height: 80%;
+  }
 `;
 
 export const ContainerImg = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 0px;
 `;
 
 export const Image = styled.img`
   height: 100%;
   width: 100%;
-  object-position:auto;
+  object-position: auto;
   object-fit: auto;
+
+  @media (max-width: 450px) {
+    object-fit: contain;
+    object-position: top;
+  }
 `;
