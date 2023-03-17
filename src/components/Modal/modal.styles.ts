@@ -20,6 +20,14 @@ export const Container = styled.div<{ imgBackground?: string }>`
   z-index: 100000;
   position: fixed;
   top: 0;
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
 `;
 
 export const Close = styled.button`

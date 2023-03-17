@@ -13,7 +13,7 @@ export const Container = styled.section`
   padding-top: 50px;
 
   @media (max-width: 450px) {
-    height: 100%;
+    height: 100vh;
   }
 `;
 
@@ -39,6 +39,11 @@ export const ContainerDescription = styled.div`
   );
   position: absolute;
   z-index: 10;
+
+  @media (max-width: 450px) {
+    object-position: top;
+    height: 100vh;
+  }
 `;
 
 export const ContentDescription = styled.div`
@@ -63,6 +68,8 @@ export const ContentDescription = styled.div`
     font-family: sans-serif;
     letter-spacing: 2px;
   }
+
+
 `;
 
 export const ButtonScroll = styled.span`
@@ -200,10 +207,7 @@ export const ContainerCarousel = styled.div`
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 10px;
 
-  @media (max-width: 450px) {
-    object-position: top;
-    height: 80%;
-  }
+
 `;
 
 export const ContainerImg = styled.div`
@@ -219,8 +223,8 @@ export const Image = styled.img`
   object-position: auto;
   object-fit: auto;
 
-  @media (max-width: 450px) {
-    object-fit: contain;
-    object-position: top;
+  @media (max-width: 767px) {
+    object-fit: cover;
+    object-position: bottom;
   }
 `;

@@ -103,7 +103,7 @@ export const Item = styled.li`
 
   @media (max-width: 390px) {
     height: 370px;
-    width: 300px;
+    width: 250px;
   }
 `;
 
@@ -115,12 +115,11 @@ export const Title = styled.h2`
   margin: 5px 0;
   font-weight: 100;
   width: 100%;
-
+  padding: 10px 0;
 
   @media (max-width: 390px) {
     font-size: 20px;
   }
-  padding: 10px 0;
 `;
 
 export const Image = styled.img`
@@ -141,12 +140,21 @@ export const ModalContainer = styled.div`
   color: ${tokens.colors.light};
   flex-direction: column;
   padding: 90px 0;
+
+  @media (max-width: 426px) {
+    justify-content: center;
+    padding: 0px 0;
+  }
 `;
 
 export const TitleModal = styled.h1`
   margin-bottom: 100px;
   font-size: 40px;
   text-transform: uppercase;
+  @media (max-width: 426px) {
+    font-size: 30px;
+    text-align: center;
+  }
 `;
 
 export const DescriptionModal = styled.h2`
@@ -154,4 +162,8 @@ export const DescriptionModal = styled.h2`
   font-size: 15px;
   text-align: center;
   width: 80%;
+
+  @media (max-width: 426px) {
+    font-size: 12px;
+  }
 `;
