@@ -31,9 +31,10 @@ const Gallery = ({ galleryRef }) => {
 
         <S.Content>
           <S.Lista>
-            {GalleryData.map((item) => {
+            {GalleryData.map((item,index) => {
               return (
                 <S.Item
+                key={index}
                   onClick={() => {
                     setOpenModal(true);
                     setImgModal(item.bgModal);

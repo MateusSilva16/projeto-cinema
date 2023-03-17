@@ -65,8 +65,8 @@ const Homer = ({ homeRef, scroll }: HomeProps) => {
           >
             {HomeData.map((item, index) => {
               return (
-                <SwiperSlide>
-                  <S.ContainerImg key={index}>
+                <SwiperSlide key={index}>
+                  <S.ContainerImg >
                     <S.Image src={item.src} alt={item.alt} />
                   </S.ContainerImg>
                 </SwiperSlide>
